@@ -13,6 +13,8 @@ module.exports = {
                     let new_name = User.current_user.firstName + ' ' + User.current_user.lastName;
 
                     alert("User " + User.current_user.oldName + ' has been changed name to ' + new_name);
+
+                    m.route.set("/list");
                 }
             }, [
             m("label.label", "First name"),
