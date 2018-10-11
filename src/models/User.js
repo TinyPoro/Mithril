@@ -26,13 +26,15 @@ var User = {
         })
     },
 
-    save: function() {
-        return m.request({
+    save: async function() {
+        await m.request({
             method: "PUT",
             url: "https://rem-rest-api.herokuapp.com/api/users/" + User.current_user.id,
             data: User.current_user,
             withCredentials: true,
         })
+
+        return User.loadList();
     }
 }
 
